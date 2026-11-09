@@ -223,3 +223,7 @@ textarea{resize:vertical;line-height:1.5}
   .section{padding:88px 0}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.case__link{display:inline-block;margin-top:12px;font-size:.9rem;color:#22d3ee;text-decoration:none}
+.case__link:hover{text-decoration:underline}
+.section__sub a{color:#22d3ee}
