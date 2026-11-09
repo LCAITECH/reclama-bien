@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reclamá Bien · Contá tu quilombo y llevate el reclamo listo | LCA ITECH</title>
+  <meta name="description" content="Armá gratis un reclamo formal por escrito contra bancos, fintechs, telefónicas, servicios, compras online y prepagas, y enterate dónde presentarlo. Tus datos no salen de tu navegador.">
+  <meta name="theme-color" content="#070a10">
+  <meta property="og:title" content="Reclamá Bien by LCA ITECH">
+  <meta property="og:description" content="Contá tu quilombo y llevate el reclamo listo para mandar.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#app">Ir al armador de reclamos</a>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Reclamá Bien by LCA ITECH">
+        <img class="brand__logo" src="assets/lca-logo.webp" alt="" width="40" height="40">
+        <span class="brand__txt"><span>Reclamá <b>Bien</b></span><small>by LCA ITECH</small></span>
+      </a>
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#como">Cómo funciona</a>
+        <a href="#casos">Casos reales</a>
+        <a href="#pro" class="nav__cta">Te lo armamos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="dot"></span>Gratis, sin registro, sin vueltas</p>
+          <h1>Reclamá <span class="grad">Bien</span></h1>
+          <p class="hero__tag">Contá tu quilombo y llevate el reclamo listo para mandar.</p>
+          <p class="lead">Banco, fintech, telefónica, luz, gas, agua, compras online o prepaga. Elegís contra quién, contás qué pasó y en dos minutos tenés el reclamo formal por escrito y sabés a qué organismo ir si no te dan bola.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary btn--lg" href="#app" id="startBtn">Empezar <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost btn--lg" href="#casos">Ver casos reales</a>
+          </div>
+          <ul class="hero__facts">
+            <li>Tus datos no salen de tu navegador</li>
+            <li>Links oficiales verificados</li>
+            <li>Empresa primero, organismo después</li>
+          </ul>
+        </div>
+        <div class="term" aria-hidden="true">
+          <div class="term__bar"><i></i><i></i><i></i><span>reclamo.txt</span></div>
+          <pre class="term__body" id="heroTerm"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section section--tight" id="como">
+      <div class="container">
+        <div class="howto">
+          <div class="howto__item"><span class="howto__n">1</span><div><h3>Elegí contra quién</h3><p>O contalo con tus palabras y detectamos el rubro.</p></div></div>
+          <div class="howto__item"><span class="howto__n">2</span><div><h3>Completá lo básico</h3><p>Qué pasó, cuándo, cuánto y qué querés conseguir.</p></div></div>
+          <div class="howto__item"><span class="howto__n">3</span><div><h3>Copiá y mandá</h3><p>Reclamo a la empresa y, si no responden, al organismo.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP -->
+    <section class="section section--alt" id="app">
+      <div class="container app">
+        <div class="section__head">
+          <p class="kicker">Armador de reclamos</p>
+          <h2 id="appTitle">¿Contra quién querés reclamar?</h2>
+        </div>
+
+        <ol class="stepper" aria-label="Pasos">
+          <li class="is-active" data-s="1"><span>1</span>Qué reclamás</li>
+          <li data-s="2"><span>2</span>Detalles</li>
+          <li data-s="3"><span>3</span>Tu reclamo</li>
+        </ol>
+
+        <!-- PASO 1 -->
+        <div class="step is-on" id="step1">
+          <div class="rubros" id="rubros" role="list"></div>
+          <div class="free">
+            <label for="freeText" class="free__label">o contanos qué te pasó</label>
+            <textarea id="freeText" rows="3" placeholder="Ej: Personal me sigue cobrando el plan después de que pedí la baja hace dos meses"></textarea>
+            <div class="free__row">
+              <p class="free__hint" id="freeHint">Escribí y detectamos el rubro solos.</p>
+              <button class="btn btn--primary" type="button" id="freeGo">Seguir <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="step" id="step2">
+          <div class="panel">
+            <div class="panel__head">
+              <span class="pill" id="rubroPill"></span>
+              <button class="linkbtn" type="button" data-go="1">Cambiar</button>
+            </div>
+
+            <fieldset class="field">
+              <legend>¿Qué pasó?</legend>
+              <div class="chips" id="motivos"></div>
+            </fieldset>
+
+            <div class="field" id="subtipoWrap" hidden>
+              <label for="subtipo">¿Qué servicio?</label>
+              <select id="subtipo">
+                <option value="luz">Luz</option>
+                <option value="gas">Gas</option>
+                <option value="agua">Agua y cloacas</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="detalle">Contalo en dos o tres líneas</label>
+              <textarea id="detalle" rows="3" placeholder="Qué pasó, con detalles concretos"></textarea>
+            </div>
+
+            <div class="grid2">
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" type="text" placeholder="Ej: Banco Galicia, Personal, Edesur" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="fecha">¿Cuándo pasó?</label>
+                <input id="fecha" type="date">
+              </div>
+              <div class="field">
+                <label for="monto">Monto <em>opcional</em></label>
+                <input id="monto" type="text" inputmode="decimal" placeholder="Ej: $25.000">
+              </div>
+              <div class="field">
+                <label for="cliente">N° de cliente, cuenta o pedido <em>opcional</em></label>
+                <input id="cliente" type="text" placeholder="Figura en la factura o el pedido">
+              </div>
+              <div class="field">
+                <label for="nroPrevio">N° de reclamo previo <em>opcional</em></label>
+                <input id="nroPrevio" type="text" placeholder="Si ya reclamaste">
+              </div>
+              <div class="field">
+                <label for="fechaPrevio">Fecha de ese reclamo <em>opcional</em></label>
+                <input id="fechaPrevio" type="date">
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>¿Qué querés conseguir?</legend>
+              <div class="chips" id="pedidos"></div>
+              <input id="pedidoOtro" type="text" placeholder="Otra cosa (opcional)" class="mt8">
+            </fieldset>
+
+            <div class="grid2">
+              <div class="field">
+                <label for="nombre">Nombre y apellido <em>opcional</em></label>
+                <input id="nombre" type="text" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="dni">DNI <em>opcional</em></label>
+                <input id="dni" type="text" inputmode="numeric">
+              </div>
+              <div class="field">
+                <label for="email">Mail para la respuesta <em>opcional</em></label>
+                <input id="email" type="email" autocomplete="email">
+              </div>
+            </div>
+
+            <p class="privacy"><span aria-hidden="true">🔒</span> Tus datos no salen de tu navegador. No se envían ni se guardan. Nunca pongas claves, códigos ni el número de tu tarjeta.</p>
+
+            <div class="actions">
+              <button class="btn btn--ghost" type="button" data-go="1">← Atrás</button>
+              <button class="btn btn--primary" type="button" id="genBtn">Armar mi reclamo <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="step" id="step3">
+          <div class="result">
+            <div class="result__main">
+              <div class="tabs" role="tablist">
+                <button class="tab is-on" role="tab" type="button" data-etapa="empresa">1. A la empresa</button>
+                <button class="tab" role="tab" type="button" data-etapa="organismo">2. Al organismo, si no responden</button>
+              </div>
+              <p class="result__hint" id="etapaHint"></p>
+              <div class="term term--doc">
+                <div class="term__bar"><i></i><i></i><i></i><span id="docName">reclamo-empresa.txt</span></div>
+                <textarea class="doc" id="doc" spellcheck="false" aria-label="Texto del reclamo, podés editarlo"></textarea>
+              </div>
+              <p class="result__note">Podés editar el texto acá mismo. Lo que quede entre [corchetes] completalo antes de mandar.</p>
+              <div class="actions actions--wrap">
+                <button class="btn btn--primary" type="button" id="copyBtn">Copiar</button>
+                <button class="btn btn--ghost" type="button" id="dlBtn">Descargar .txt</button>
+                <button class="btn btn--ghost" type="button" data-go="2">Editar datos</button>
+                <button class="btn btn--ghost" type="button" id="resetBtn">Empezar otro</button>
+              </div>
+            </div>
+            <aside class="where" aria-labelledby="whereTitle">
+              <p class="kicker">Dónde presentarlo</p>
+              <h3 id="whereTitle">Paso a paso</h3>
+              <ol class="where__steps" id="whereSteps"></ol>
+              <h4>Links oficiales</h4>
+              <ul class="where__links" id="whereLinks"></ul>
+              <div id="plazosWrap">
+                <h4>Plazos y derechos con fuente</h4>
+                <ul class="where__plazos" id="plazos"></ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS -->
+    <section class="section" id="casos">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">Casos reales</p>
+          <h2>Esto no es teoría. Nos funcionó a nosotros.</h2>
+          <p class="section__sub">Reclamos armados por el bot de reclamos de LCA ITECH, en casos propios.</p>
+        </div>
+        <div class="grid grid--2">
+          <article class="case">
+            <div class="case__head"><img src="assets/face_reclami.png" alt="" width="44" height="44"><span class="badge badge--ok">Resuelto</span></div>
+            <h3>Banco Galicia</h3>
+            <p>El bot armó el reclamo formal por escrito. El banco lo aprobó y devolvió la plata.</p>
+          </article>
+          <article class="case">
+            <div class="case__head"><img src="assets/face_reclami.png" alt="" width="44" height="44"><span class="badge badge--ok">Resuelto</span></div>
+            <h3>Una fintech</h3>
+            <p>Después del reclamo por escrito, la empresa emitió una tarjeta nueva.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRO -->
+    <section class="section section--alt" id="pro">
+      <div class="container">
+        <div class="pro">
+          <div>
+            <p class="kicker">Servicio a medida</p>
+            <h2>¿Querés que lo armemos y sigamos el caso por vos?</h2>
+            <p class="section__sub">Revisamos tu caso, armamos el reclamo a medida, el escrito al organismo si no responden y te acompañamos con el seguimiento. Todo por escrito.</p>
+            <ul class="terms">
+              <li>Precio fijo, a consultar</li>
+              <li>Sin llamadas</li>
+              <li>Vos mandás, vos decidís</li>
+            </ul>
+          </div>
+          <div class="pro__ctas">
+            <a class="btn btn--primary btn--lg" href="https://t.me/leandroLCA" target="_blank" rel="noopener">Escribinos por Telegram</a>
+            <a class="btn btn--ghost btn--lg" href="mailto:itech.lca@gmail.com?subject=Quiero%20ayuda%20con%20un%20reclamo">itech.lca@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="brand__logo" src="assets/lca-logo.webp" alt="" width="36" height="36">
+        <div>
+          <strong>Reclamá Bien</strong> by LCA ITECH
+          <p>Ayuda para redactar, no es asesoramiento legal. No pedimos claves ni datos de tarjeta.</p>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="https://t.me/leandroLCA" target="_blank" rel="noopener">Telegram</a>
+        <a href="mailto:itech.lca@gmail.com">Mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
