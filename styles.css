@@ -227,3 +227,23 @@ textarea{resize:vertical;line-height:1.5}
 .case__link{display:inline-block;margin-top:12px;font-size:.9rem;color:#22d3ee;text-decoration:none}
 .case__link:hover{text-decoration:underline}
 .section__sub a{color:#22d3ee}
+
+/* IDIOMA, PAÍS, RECLAMI */
+.lang{display:flex;border:1px solid var(--line2);border-radius:999px;overflow:hidden;flex:none}
+.lang__btn{background:none;border:0;color:var(--mut);font:600 .78rem var(--mono);padding:6px 11px;cursor:pointer}
+.lang__btn[aria-pressed="true"]{background:var(--grad);color:#05070b}
+.lang__btn:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
+.country{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:-6px 0 22px}
+.country label{font-weight:600;font-size:.93rem}
+.country select{width:auto;min-width:220px;padding:9px 12px}
+.country small{color:var(--dim);font-size:.82rem;flex-basis:100%}
+.where__note{margin-top:16px;font-size:.78rem;color:var(--dim)}
+.footer__brand p + p{margin-top:4px}
+.reclami{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;border:1px solid rgba(34,211,238,.3);border-radius:20px;padding:26px;background:radial-gradient(600px 260px at 0 0,rgba(34,211,238,.12),transparent 70%),linear-gradient(180deg,var(--card2),var(--card))}
+.reclami__face{width:132px;height:132px;border-radius:28px;box-shadow:0 0 0 1px rgba(34,211,238,.35),0 20px 50px -20px rgba(34,211,238,.5)}
+.reclami__tag{font:600 clamp(1.05rem,2.4vw,1.25rem)/1.4 var(--sans);margin:8px 0 10px;max-width:46ch}
+.reclami .btn{margin-top:22px}
+@media (min-width:760px){.reclami{grid-template-columns:auto 1fr;padding:40px;gap:36px}}
+@media (max-width:560px){.lang__btn{padding:6px 9px}}
+.nav__cta{white-space:nowrap}
+@media (max-width:480px){.nav__links{display:none}}
